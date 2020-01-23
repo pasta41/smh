@@ -1,0 +1,5 @@
+.sconsign.dblite
+__pycache__/
+build/
+output/
+figs/

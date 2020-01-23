@@ -1053,13 +1053,8 @@ if __name__ == '__main__':
             os.mkdir(dirname)
 
     root_jobs = []
-    root_jobs.append(
-        jobs.Job('likelihoods_per_iteration_plot', {})
-    )
     for model, d in [
-            ('lr', 10),
-            ('lr', 20),
-            ('rlr', 10)
+            ('lr', 10)
     ]:
         root_jobs.append(
             jobs.Job('ess_random_walk', {
@@ -1079,13 +1074,7 @@ if __name__ == '__main__':
                 'd': d,
             })
         )
-
-    root_jobs += [
-        jobs.Job('histogram', {'d': 10, 'N': 2 ** 11}),
-        jobs.Job('histogram', {'d': 10, 'N': 2 ** 13}),
-        jobs.Job('histogram', {'d': 10, 'N': 2 ** 16}),
-    ]
-
+        
     '''
     root_jobs.append(
         jobs.Job('density_estimates', {})
